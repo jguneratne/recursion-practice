@@ -5,8 +5,6 @@
 
 const nums = [[[5], 3], 0, 2, ["foo"], [], [4, [5, 6]]]; // 7
 
-const array = [1, 2, 3];
-
 //THIS WORKS BUT ISN'T CORRECT WAY TO DO THIS
 
 // function totalIntegers(arr, index, count) {
@@ -35,14 +33,14 @@ function totalIntegers(arr) {
   let total = 0;
 
   // Base Case
-  if (Array.isArray(arr) || !Number.isInteger(arr)) {
+  if (!Array.isArray(arr) && !Number.isInteger(arr)) {
     return 0;
   } else if (!Array.isArray(arr) && Number.isInteger(arr)) {
     return 1;
   } else {
-    for (let i; i < arr.length; i++) {
-      // Recursive Case
-      total += totalIntegers(arr);
+    // Recursive Case
+    for (let i = 0; i < arr.length; i++) {
+      total += totalIntegers(arr[i]);
     }
   }
 
