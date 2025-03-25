@@ -10,9 +10,8 @@ function replicateNumber(times, num) {
   //Base Case
   if (times < 0) {
     return [];
-  }
-  // Recursive Case
-  else
+    // Recursive Case
+  } else
     while (arr.length < times) {
       replicateNumber(times - 1, arr.push(num));
     }
