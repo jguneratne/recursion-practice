@@ -4,6 +4,21 @@
 // The function should return an array containing repetitions of the number argument. For instance,
 // replicate(3, 5) should return [5,5,5]. If the times argument is negative, return an empty array.
 
-console.log(replicate(3, 5)); // [5, 5, 5]
-console.log(replicate(1, 69)); // [69]
-console.log(replicate(-2, 6)); // []
+function replicateNumber(times, num) {
+  let arr = [];
+
+  //Base Case
+  if (times < 0) {
+    return [];
+  }
+  // Recursive Case
+  else
+    while (arr.length < times) {
+      replicateNumber(times - 1, arr.push(num));
+    }
+  return arr;
+}
+
+console.log(replicateNumber(3, 5)); // [5, 5, 5]
+console.log(replicateNumber(1, 69)); // [69]
+console.log(replicateNumber(-2, 6)); // []
